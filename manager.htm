@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myapp">
+<head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!-- load angular via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.angularjs.org/1.3.0-rc.2/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.3.0-rc.2/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.3.0-rc.2/angular-resource.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/Static/CSS/style.css" rel="stylesheet">
+    <script src="app.js"></script>
+    <script src="Routes/Mroutes.js"></script>
+    <script src="Services/Mservices.js"></script>
+    <script src="Controllers/Mcontrollers.js"></script>
+    <script src="/Static/JS/script.js"></script>
+	<title></title>
+</head>
+<body>
+    <nav>
+    <div class="nav-wrapper" ng-controller="managerController">
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="#!">Profile</a></li>
+          <li><a href="#!">Settings</a></li>
+          <li class="divider"></li>
+          <li><a href="login.htm">Log Out</a></li>
+        </ul>        
+        <a href="" class="brand-logo">Premier</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <!-- ToMenu Structure for Mobile -->  
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#/">Dashboard</a></li>
+            <li><a href="#/checklist">My Checklist</a></li>
+            <li><a href="#/fillrate">My Fill Rates</a></li>
+            <li><a href="#/review/checklist">Review Recruiters Checklist</a></li>
+            <li><a class="dropdown-button blue" href="#!" data-activates="dropdown1"><i class="material-icons left">perm_identity</i><span id="spanName">{{EmployeeName}}</span><i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <!-- Menu Structure for Mobile -->
+        </ul>
+    </div>        
+
+    </nav>
+    <div class="container">
+        <div ng-view>
+        
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js" ></script>
+    <script src="/Static/JS/script.js"></script>
+    <script>
+          $(document).ready(function() {
+                $(".button-collapse").sideNav();
+                $(".dropdown-button").dropdown();
+            });
+    </script>
+</body>
+</html>
